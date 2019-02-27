@@ -1,0 +1,26 @@
+.navbar {
+    background: var(--white);
+    margin-bottom: 0px;
+    position: relative;
+
+}
+
+.headerTitle {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.headerTitle:hover {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.siteMenuEntry {
+    text-decoration: none!important;
+    display: inline-block
+}
+
+.siteMenuEntry a {
+    font-size: 2em!important;
+}
+
