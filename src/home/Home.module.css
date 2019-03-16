@@ -12,6 +12,17 @@
   animation-duration: 3s;
 }
 
+.bgOverlay {
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  background-image: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.83),
+    rgba(135, 130, 130, 0.37)
+  );
+}
+
 .profileWrapper {
   position: relative;
   display: block;
@@ -30,7 +41,7 @@
   border-radius: 50%;
   height: 20vw;
   width: 20vw;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 
   -webkit-animation-name: bounce;
   -moz-animation-name: bounce;
@@ -45,6 +56,32 @@
   font-size: 35px;
   color: var(--black);
   font-family: "Srisakdi", cursive;
+  margin-bottom: 20px;
+}
+
+.cameraSeparator {
+  background-image: url("../assets/camera.svg");
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.lineSeparator {
+  display: inline-block;
+  background-color: var(--black);
+  width: 20%;
+  height: 1px;
+  margin: 50px 25px 10px;
+}
+
+.separatorGrid {
+  display: inline-block;
+}
+
+.homeContent {
+  height: 100vh;
 }
 
 @media only screen and (max-width: 800px) {
@@ -55,7 +92,10 @@
     margin-left: 5px;
   }
   .header {
-      height: 40vh;
+    height: 40vh;
+  }
+  .lineSeparator {
+    width: 10%;
   }
 }
 

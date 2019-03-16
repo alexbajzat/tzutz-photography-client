@@ -1,16 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300|Saira+Extra+Condensed|Srisakdi");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300|ZCOOL+XiaoWei|Srisakdi");
 
 :root {
   --main-theme-color: #006064;
   --light-theme-color: #428e92;
   --dark-theme-color: #00363a;
-  --grey: #ede7f6;
+  --grey: #616161;
+  --black: #000000;
 }
 
 html {
   font-size: 1em;
   font-family: "Saira Extra Condensed", sans-serif;
+  background-image: url("./assets/paper-texture.jpg");
+  background-repeat: repeat;
 }
+
 /* 
 font-family: 'Indie Flower', cursive;
 font-family: 'Open Sans Condensed', sans-serif;

@@ -1,7 +1,7 @@
 .navbar {
     /* background: var(--main-theme-color); */
     margin-bottom: 0px;
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     z-index:100;
@@ -11,7 +11,11 @@
 .headerTitle {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: "Srisakdi", cursive;
+    font-stretch: expanded;
+    letter-spacing: 0.1rem;
+    font-weight: bolder;
 }
 
 .headerTitle:hover {
@@ -28,6 +32,7 @@
 }
 
 .siteMenuEntry a {
-    font-size: 1em;
+    font-size: 1.5em;
+    font-family: 'ZCOOL XiaoWei', serif; 
 }
 
