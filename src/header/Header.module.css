@@ -1,26 +1,33 @@
 .navbar {
-    background: var(--white);
+    /* background: var(--main-theme-color); */
     margin-bottom: 0px;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index:100;
 
 }
 
 .headerTitle {
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .headerTitle:hover {
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
+    
 }
 
+
 .siteMenuEntry {
-    text-decoration: none!important;
-    display: inline-block
+    text-decoration: none;
+    display: inline-block;
+    color: var(--white);
 }
 
 .siteMenuEntry a {
-    font-size: 2em!important;
+    font-size: 1em;
 }
 

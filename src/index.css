@@ -4,3 +4,8 @@
   --dark-theme-color: #00363a;
   --grey: #ede7f6;
 }
+
+html {
+  font-size: 1em;
+}
+
