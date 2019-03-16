@@ -12,15 +12,17 @@
   animation-duration: 3s;
 }
 
-
-.profile {
+.profileWrapper {
   position: relative;
   display: block;
 }
+.profile {
+  position: absolute;
+  top: -100px;
+  width: 100%;
+}
 
 .profileImg {
-  position: absolute;
-  top: -150px;
   background-image: url("../assets/paul.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +30,7 @@
   border-radius: 50%;
   height: 20vw;
   width: 20vw;
-
+  margin-bottom: 10px;  
 
   -webkit-animation-name: bounce;
   -moz-animation-name: bounce;
@@ -43,7 +45,6 @@
   font-size: 35px;
   color: var(--black);
   font-family: "Srisakdi", cursive;
-  position: relative;
 }
 
 @media only screen and (max-width: 800px) {
@@ -52,6 +53,9 @@
     width: 40vw;
     top: -80px;
     margin-left: 5px;
+  }
+  .header {
+      height: 40vh;
   }
 }
 
