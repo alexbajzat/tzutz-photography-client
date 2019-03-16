@@ -1,4 +1,4 @@
-.main {
+.header {
   height: 50vh;
 }
 
@@ -12,8 +12,10 @@
   animation-duration: 3s;
 }
 
+
 .profile {
   position: relative;
+  display: block;
 }
 
 .profileImg {
@@ -27,13 +29,21 @@
   height: 20vw;
   width: 20vw;
 
+
   -webkit-animation-name: bounce;
   -moz-animation-name: bounce;
   animation-name: bounce;
   -webkit-transform-origin: center bottom;
   -moz-transform-origin: center bottom;
   transform-origin: center bottom;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 2s;
+}
+
+.messageContainer {
+  font-size: 35px;
+  color: var(--black);
+  font-family: "Srisakdi", cursive;
+  position: relative;
 }
 
 @media only screen and (max-width: 800px) {
@@ -44,7 +54,6 @@
     margin-left: 5px;
   }
 }
-
 
 /*!
  * animate.css -http://daneden.me/animate
@@ -94,14 +103,12 @@
   }
 }
 
-
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
   }
-  
+
+  to {
+    opacity: 1;
+  }
+}

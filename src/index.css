@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300|Saira+Extra+Condensed|Srisakdi");
+
 :root {
   --main-theme-color: #006064;
   --light-theme-color: #428e92;
@@ -7,5 +9,10 @@
 
 html {
   font-size: 1em;
+  font-family: "Saira Extra Condensed", sans-serif;
 }
-
+/* 
+font-family: 'Indie Flower', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Srisakdi', cursive;
+font-family: 'Saira Extra Condensed', sans-serif; */
