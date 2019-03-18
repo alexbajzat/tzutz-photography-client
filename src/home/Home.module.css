@@ -54,6 +54,9 @@
 }
 
 .profileImgOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -67,6 +70,30 @@
   opacity: 0.7;
   animation-name: hoverDisplay;
   animation-duration: 0.5s;
+}
+
+.fbIcon {
+  background-image: url("../assets/facebook.svg");
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
+  height: 40px;
+  width: 40px;
+}
+
+.fbIcon:hover, .instaIcon:hover {
+  height: 60px;
+  width: 60px;
+}
+
+
+.instaIcon {
+  background-image: url("../assets/instagram.svg");
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
+  height: 40px;
+  width: 40px;
 }
 
 .messageContainer {

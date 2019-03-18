@@ -15,7 +15,10 @@ export default function Home() {
       <div className={`${style.profileWrapper} container`}>
         <div className={style.profile}>
           <div className={`${style.profileImg} shadow`}>
-            <div className={style.profileImgOverlay}/>
+            <div className={style.profileImgOverlay}>
+              <div className={style.fbIcon} />
+              <div className={style.instaIcon} />
+            </div>
           </div>
           <div
             className={`container text-center px-4 ${style.messageContainer}`}
