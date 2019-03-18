@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Typing from "react-typing-animation";
 import style from "./Home.module.css";
 
@@ -14,13 +14,15 @@ export default function Home() {
 
       <div className={`${style.profileWrapper} container`}>
         <div className={style.profile}>
-          <div className={`${style.profileImg} shadow`} />
+          <div className={`${style.profileImg} shadow`}>
+            <div className={style.profileImgOverlay}/>
+          </div>
           <div
             className={`container text-center px-4 ${style.messageContainer}`}
           >
-            <Typing speed={100}>
+            <Typing speed={90}>
               <p>{typingMessagePart1}</p>
-              <Typing.Delay ms={800} />
+              <Typing.Delay ms={500} />
               <p>{typingMessagePart2}</p>
             </Typing>
           </div>
@@ -30,9 +32,7 @@ export default function Home() {
             <div className={style.lineSeparator} />
           </div>
         </div>
-        <div className={style.homeContent}>
-
-        </div>
+        <div className={style.homeContent} />
       </div>
     </div>
   );
