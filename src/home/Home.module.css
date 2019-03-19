@@ -3,6 +3,7 @@
 }
 
 .bg {
+  position: relative;
   background-image: url("./../assets/camera-background.jpg");
   height: 100%;
   background-position: center;
@@ -23,17 +24,9 @@
   );
 }
 
-.profileWrapper {
-  position: relative;
-  display: block;
-}
-.profile {
-  position: absolute;
-  top: -100px;
-  width: 100%;
-}
-
 .profileImg {
+  position: absolute;
+  bottom: -100px;
   background-image: url("../assets/paul.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -41,6 +34,8 @@
   border-radius: 50%;
   height: 20vw;
   width: 20vw;
+  max-height: 250px;
+  max-width: 250px;
   margin-bottom: 10px;
   border: 2px solid var(--white);
 
@@ -81,11 +76,11 @@
   width: 40px;
 }
 
-.fbIcon:hover, .instaIcon:hover {
+.fbIcon:hover,
+.instaIcon:hover {
   height: 60px;
   width: 60px;
 }
-
 
 .instaIcon {
   background-image: url("../assets/instagram.svg");
@@ -126,6 +121,8 @@
 
 .homeContent {
   height: 100vh;
+  background-image: url("../assets/paper-texture.jpg");
+  background-repeat: repeat;
 }
 
 @keyframes hoverDisplay {
@@ -137,15 +134,13 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .profileImg {
-    height: 40vw;
-    width: 40vw;
-    top: -80px;
-    margin-left: 5px;
-  }
-  .header {
-    height: 40vh;
+    width: 25vw;
+    height: 25vw;
+    min-height: 150px;
+    min-width: 150px;
+    bottom: -20px;
   }
   .lineSeparator {
     width: 10%;
