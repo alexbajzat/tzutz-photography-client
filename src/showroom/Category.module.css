@@ -1,0 +1,28 @@
+.categoryContainer {
+  position: relative;
+  height: 20vw;
+  width: 20vw;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: black;
+  margin: 5px;
+}
+.categoryOverlay {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.801),
+    rgba(135, 130, 130, 0.37)
+  );
+}
+.categoryImage {
+  height: 100%;
+  width: 100%;
+}
+@media only screen and (max-width: 1000px) {
+  .categoryContainer {
+    height: 45vw;
+    width: 45vw;
+  }
+}

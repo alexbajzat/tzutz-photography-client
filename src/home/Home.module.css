@@ -91,38 +91,31 @@
   width: 40px;
 }
 
-.messageContainer {
-  font-size: 35px;
-  color: var(--black);
-  font-family: "Srisakdi", cursive;
-  margin-bottom: 20px;
+.homeContent {
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  background-image: url("../assets/paper-texture.jpg");
+  background-repeat: repeat;
 }
 
-.cameraSeparator {
-  background-image: url("../assets/camera.svg");
-  background-position: center;
-  background-size: cover;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+.messageContainer {
+  height: 50vh;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  font-family: "Indie Flower", cursive;
+  padding: 20px 0px;
 }
 
 .lineSeparator {
-  display: inline-block;
-  background-color: var(--black);
-  width: 20%;
+  /* display: inline-block; */
+  background-color: var(--white);
+  width: 40%;
   height: 1px;
-  margin: 50px 25px 10px;
-}
-
-.separatorGrid {
-  display: inline-block;
-}
-
-.homeContent {
-  height: 100vh;
-  background-image: url("../assets/paper-texture.jpg");
-  background-repeat: repeat;
+  margin-top: 0px;
 }
 
 @keyframes hoverDisplay {
@@ -135,6 +128,9 @@
 }
 
 @media only screen and (max-width: 1000px) {
+  .header {
+    height: 40vh;
+  }
   .profileImg {
     width: 25vw;
     height: 25vw;
@@ -143,7 +139,7 @@
     bottom: -20px;
   }
   .lineSeparator {
-    width: 10%;
+    width: 40%;
   }
 }
 

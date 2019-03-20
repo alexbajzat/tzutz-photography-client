@@ -1,5 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Typing from "react-typing-animation";
+
+//components
+import { Showroom } from "../showroom";
+
+//styles
 import style from "./Home.module.css";
 
 export default function Home() {
@@ -23,19 +28,14 @@ export default function Home() {
       </div>
 
       <div className={style.homeContent}>
-        <div className={`container text-center px-4 ${style.messageContainer}`}>
+        <div className={`text-center px-4 ${style.messageContainer}`}>
           <Typing speed={90}>
             <p>{typingMessagePart1}</p>
-            <Typing.Delay ms={500} />
+            <Typing.Delay ms={300} />
             <p>{typingMessagePart2}</p>
           </Typing>
         </div>
-        <div className={`container text-center ${style.separatorGrid}`}>
-          <div className={style.lineSeparator} />
-          <div className={style.cameraSeparator} />
-          <div className={style.lineSeparator} />
-        </div>
-        
+        <Showroom />
       </div>
     </div>
   );
