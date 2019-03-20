@@ -1,25 +1,35 @@
 .categoryContainer {
-  position: relative;
   height: 20vw;
   width: 20vw;
   border-radius: 15px;
+  border: 1px solid white;
   overflow: hidden;
-  background-color: black;
   margin: 5px;
 }
 .categoryOverlay {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
   width: 100%;
+  z-index: 100;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5em;
+  color: white;
   background-image: linear-gradient(
-    to top,
-    rgba(5, 5, 5, 0.801),
-    rgba(135, 130, 130, 0.37)
+    rgba(3, 168, 244, 0.5),
+    rgba(3, 168, 244, 1),
+    rgba(3, 168, 244, 0.02)
   );
 }
+
 .categoryImage {
   height: 100%;
   width: 100%;
+  background-position: center;
+  background-size: cover;
 }
+
 @media only screen and (max-width: 1000px) {
   .categoryContainer {
     height: 45vw;

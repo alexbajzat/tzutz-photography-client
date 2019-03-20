@@ -110,13 +110,7 @@
   padding: 20px 0px;
 }
 
-.lineSeparator {
-  /* display: inline-block; */
-  background-color: var(--white);
-  width: 40%;
-  height: 1px;
-  margin-top: 0px;
-}
+
 
 @keyframes hoverDisplay {
   from {
