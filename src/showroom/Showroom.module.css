@@ -15,12 +15,12 @@
   color: var(--white);
 }
 .lineSeparator {
-    /* display: inline-block; */
-    background-color: var(--white);
-    width: 40%;
-    height: 1px;
-    margin-top: 0px;
-  }
+  /* display: inline-block; */
+  background-color: var(--white);
+  width: 40%;
+  height: 1px;
+  margin-top: 0px;
+}
 
 .contentTitle > p {
   margin: 0;
@@ -28,6 +28,10 @@
 
 .categoryMenu {
   display: flex;
+  margin-top: 40px;
   justify-content: center;
   align-items: center;
+}
+
+.presenterContainer {
 }

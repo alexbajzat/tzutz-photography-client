@@ -19,8 +19,8 @@
   z-index: 99;
   background-image: linear-gradient(
     to top,
-    rgba(5, 5, 5, 0.83),
-    rgba(135, 130, 130, 0.37)
+    rgba(5, 5, 5, 0.938),
+    rgba(5, 5, 5, 0.144)
   );
 }
 
@@ -59,6 +59,7 @@
   opacity: 0;
   background-color: var(--black);
   overflow: hidden;
+  transition: opacity 0.5s;
 }
 
 .profileImgOverlay:hover {
@@ -109,8 +110,6 @@
   font-family: "Indie Flower", cursive;
   padding: 20px 0px;
 }
-
-
 
 @keyframes hoverDisplay {
   from {

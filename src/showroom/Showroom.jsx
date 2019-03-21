@@ -42,6 +42,7 @@ export default function Showroom() {
               );
             })}
           </div>
+          <div className={`${style.presenterContainer} container-fluid`} />
         </div>
       </div>
     </div>
