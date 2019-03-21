@@ -7,6 +7,7 @@
   --grey: #616161;
   --black: #000000;
   --white: #ffffff;
+  --main-font: "Indie Flower", cursive;
 }
 
 html {
@@ -18,4 +19,5 @@ html {
 font-family: 'Indie Flower', cursive;
 font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Srisakdi', cursive;
-font-family: 'Saira Extra Condensed', sans-serif; */
+font-family: 'Saira Extra Condensed', sans-serif; 
+*/
