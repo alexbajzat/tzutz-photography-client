@@ -6,12 +6,12 @@
   --dark-theme-color: #00363a;
   --grey: #616161;
   --black: #000000;
+  --white: #ffffff;
 }
 
 html {
   font-size: 1em;
   font-family: "Saira Extra Condensed", sans-serif;
-
 }
 
 /* 

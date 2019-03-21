@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import style from "./Showroom.module.css";
@@ -7,6 +7,21 @@ import style from "./Showroom.module.css";
 import { Category } from "./";
 
 export default function Showroom() {
+  const [categories, setCategories] = useState([
+    {
+      name: "category 1",
+      imageUrl: "https://www.gstatic.com/webp/gallery/1.jpg"
+    },
+    {
+      name: "category 2",
+      imageUrl: "https://www.gstatic.com/webp/gallery/2.jpg"
+    },
+    {
+      name: "category 3",
+      imageUrl: "https://www.gstatic.com/webp/gallery/3.jpg"
+    }
+  ]);
+
   return (
     <div>
       <div className={`${style.showroomContainer}`}>
@@ -16,21 +31,16 @@ export default function Showroom() {
             <div className={style.lineSeparator} />
           </div>
           <div className={`${style.categoryMenu} row`}>
-            <Category
-              className="col"
-              name="category1"
-              imageUrl="https://www.gstatic.com/webp/gallery/1.jpg"
-            />
-            <Category
-              className="col"
-              name="category2"
-              imageUrl="https://www.gstatic.com/webp/gallery/2.jpg"
-            />
-             <Category
-              className="col"
-              name="category3"
-              imageUrl="https://www.gstatic.com/webp/gallery/3.jpg"
-            />
+            {categories.map(category => {
+              console.log(category);
+              return (
+                <Category
+                  className="col"
+                  name={category.name}
+                  imageUrl={category.imageUrl}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
