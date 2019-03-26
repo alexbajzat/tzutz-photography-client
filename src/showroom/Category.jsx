@@ -16,7 +16,7 @@ export default function Category(props) {
         <div className={style.categoryOverlay}>
           <div className={style.categoryName}>{props.name}</div>
         </div>
-        <div className={style.goToButton}>
+        <div className={style.goToButton} onClick={props.clicked} onTouchStart={props.clicked}>
           <Button display="Open Gallery" color="white" />
         </div>
       </div>
