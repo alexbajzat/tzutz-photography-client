@@ -110,7 +110,8 @@ export default function Showroom() {
         const proximity = -(windowYPos - presenterBottom);
         showroomRef.current.style.backgroundColor = changeOnProximity(
           showroomRef.current.style.backgroundColor,
-          proximity < 0 ? 0 : proximity,
+          // proximity < 0 ? 0 :
+          Math.abs(proximity),
           presenterRef.current.offsetHeight
         );
 

@@ -16,7 +16,6 @@
   color: var(--white);
 }
 .lineSeparator {
-  /* display: inline-block; */
   background-color: var(--white);
   width: 40%;
   height: 1px;
@@ -37,8 +36,8 @@
 .presenterContainer {
   z-index: 101;
   max-width: 100vh;
-  border: 1px var(--white) solid;
+  border: 0.2px var(--white) solid;
   margin: 50px 0px;
-  background-color: var(--grey);
+  background-color: var(--dark-grey);
   opacity: 1;
 }
