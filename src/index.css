@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300|ZCOOL+XiaoWei|Srisakdi");
 
 :root {
-  --main-theme-color: #4527a0;
-  --light-theme-color: #7953d2;
-  --dark-theme-color: #000070;
+  --main-theme-color: #4527a0fd;
+  --light-theme-color: #7953d2fd;
+  --dark-theme-color: #000070fd;
   --grey: #616161;
   --black: #000000;
   --white: #ffffff;

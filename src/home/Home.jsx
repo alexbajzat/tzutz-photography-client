@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       <div className={style.homeContent}>
-        <div className={`text-center px-4 ${style.messageContainer}`}>
+        <div className={`text-center px-4 ${style.messageContainer} shadow-lg`}>
           <Typing speed={90}>
             <p>{typingMessagePart1}</p>
             <Typing.Delay ms={300} />

@@ -109,6 +109,8 @@
   color: var(--black);
   font-family: "Indie Flower", cursive;
   padding: 20px 0px;
+  overflow: visible;
+  z-index: 500;
 }
 
 @keyframes hoverDisplay {
