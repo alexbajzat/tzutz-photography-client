@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   animation-name: fadeIn;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 .bgOverlay {
@@ -45,7 +45,7 @@
   -webkit-transform-origin: center bottom;
   -moz-transform-origin: center bottom;
   transform-origin: center bottom;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 3s;
 }
 
 .profileImgOverlay {
@@ -111,6 +111,11 @@
   padding: 20px 0px;
   overflow: visible;
   z-index: 500;
+}
+
+.contactContent {
+  height: 50vh;
+
 }
 
 @keyframes hoverDisplay {

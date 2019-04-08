@@ -1,0 +1,23 @@
+.main {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  background-color: var(--light-theme-color);
+}
+
+.contentTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0px;
+  font-size: 2.5em;
+  font-family: "Indie Flower", cursive;
+  color: var(--white);
+}
+.lineSeparator {
+  background-color: var(--white);
+  width: 40%;
+  height: 1px;
+  margin-top: 0px;
+}

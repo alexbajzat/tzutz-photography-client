@@ -3,6 +3,7 @@ import Typing from "react-typing-animation";
 
 //components
 import { Showroom } from "../showroom";
+import { Contact } from "../contact";
 
 //styles
 import style from "./Home.module.css";
@@ -36,6 +37,9 @@ export default function Home() {
           </Typing>
         </div>
         <Showroom />
+      </div>
+      <div className={style.contactContent}>
+        <Contact />
       </div>
     </div>
   );
