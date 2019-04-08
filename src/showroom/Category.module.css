@@ -3,7 +3,7 @@
   height: 20vw;
   width: 20vw;
   border-radius: 15px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   overflow: hidden;
   margin: 5px;
 }

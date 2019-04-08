@@ -51,9 +51,6 @@ export default function Showroom() {
   const presenterRef = useRef(null);
   const showroomRef = useRef(null);
   useEffect(() => {
-    // console.log(style.showroomContainer);
-    // console.log(backgroundRef.current.style);
-
     window.addEventListener("scroll", blurBackgroundOnPresenterViewable);
     window.addEventListener("touchmove", blurBackgroundOnPresenterViewable);
   });
@@ -72,8 +69,6 @@ export default function Showroom() {
   var initialized = false;
 
   function changeOnProximity(rgbaBase, distanceToFit, maxDistance) {
-    console.log(rgbaBase);
-    console.log(distanceToFit);
     rgbaBase = rgbaBase.match(
       /^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,([\s+]?(\d+)[\s+]?.(\d+))/i
     );
@@ -114,7 +109,6 @@ export default function Showroom() {
           presenterRef.current.offsetHeight
         );
 
-        console.log(showroomRef.current.style.backgroundColor);
       } else if (initialized) {
         showroomRef.current.style.backgroundColor = `rgba(${initBgR},${initBgG},${initBgB},${initBgAlpha})`;
       }
