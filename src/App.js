@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 // pages
-import { Header } from "./header";
 import { Home } from "./home";
+import { Admin, AdminLogin } from "./admin";
 
 class App extends Component {
   render() {
     return (
       <div className="site-background">
-        <Header />
-        <Home />
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/admin-login" component={AdminLogin} />
+        </Router>
       </div>
     );
   }

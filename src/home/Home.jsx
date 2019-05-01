@@ -4,7 +4,7 @@ import Typing from "react-typing-animation";
 //components
 import { Showroom } from "../showroom";
 import { Contact } from "../contact";
-
+import { Header } from "../header";
 //styles
 import style from "./Home.module.css";
 
@@ -14,6 +14,7 @@ export default function Home() {
 
   return (
     <div>
+      <Header />
       <div className={`${style.header} shadow`}>
         <div className={style.bg}>
           <div className={style.bgOverlay} />
