@@ -4,15 +4,20 @@ import React, { useEffect } from "react";
 import style from "./Button.module.css";
 
 export default function Button(props) {
+  const buttonStyle = {
+    border: `1px ${props.color} solid`
+  }
+  const buttonTextStyle = {
+    color: props.color
+  }
   return (
     <div
-      className={`container-fluid px-0 ${style.buttonContainer}`}
-      style={{ borderColor: props.color }}
+      className={`${style.buttonContainer}`}
+      style={buttonStyle}
     >
-      <div className={`${style.buttonBackground}`}>
-        <div className={`${style.display} m-0`}>
-          <p style={{ color: props.color }}>{props.display}</p>
-        </div>
+      <div className={`${style.buttonText}`}
+        style={buttonTextStyle}>
+        {props.text}
       </div>
     </div>
   );

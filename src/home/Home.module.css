@@ -1,202 +1,39 @@
-.header {
-  height: 50vh;
-}
-
-.bg {
-  position: relative;
-  background-image: url("./../assets/camera-background.jpg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation-name: fadeIn;
-  animation-duration: 2s;
-}
-
-.bgOverlay {
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-  background-image: linear-gradient(
-    to top,
-    rgba(5, 5, 5, 0.938),
-    rgba(5, 5, 5, 0.144)
-  );
-}
-
-.profileImg {
-  position: absolute;
-  bottom: -100px;
-  background-image: url("../assets/paul.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 50%;
-  height: 20vw;
-  width: 20vw;
-  max-height: 250px;
-  max-width: 250px;
-  margin-bottom: 10px;
-  border: 1px solid var(--white);
-
-  -webkit-animation-name: bounce;
-  -moz-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-transform-origin: center bottom;
-  -moz-transform-origin: center bottom;
-  transform-origin: center bottom;
-  -webkit-animation-duration: 3s;
-}
-
-.profileImgOverlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  border-radius: 50%;
-  opacity: 0;
-  background-color: var(--black);
-  overflow: hidden;
-  transition: opacity 0.5s;
-}
-
-.profileImgOverlay:hover {
-  opacity: 0.7;
-  animation-name: hoverDisplay;
-  animation-duration: 0.5s;
-}
-
-.fbIcon {
-  background-image: url("../assets/facebook.svg");
-  background-position: center;
-  background-size: cover;
-  margin: 10px;
-  height: 40px;
-  width: 40px;
-}
-
-.fbIcon:hover,
-.instaIcon:hover {
-  height: 60px;
-  width: 60px;
-}
-
-.instaIcon {
-  background-image: url("../assets/instagram.svg");
-  background-position: center;
-  background-size: cover;
-  margin: 10px;
-  height: 40px;
-  width: 40px;
-}
-
-.homeContent {
+.mainContainer {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
-  background-image: url("../assets/paper-texture.jpg");
-  background-repeat: repeat;
+  align-items: flex-start;
 }
 
-.messageContainer {
-  height: 50vh;
-  font-size: 35px;
+.contentGroup {
+  height: 100%;
+  width: 40%;
+  min-width: 200px;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--black);
-  font-family: "Indie Flower", cursive;
-  padding: 20px 0px;
-  overflow: visible;
-  z-index: 500;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 10vh;
+  margin-left: 10vw;
 }
 
-.contactContent {
-  height: 50vh;
+.content {
+  width: 100%;
+  margin: 5px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+  
+  font-family: var(--main-font);
 }
 
-@keyframes hoverDisplay {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.7;
-  }
+.contentTitle {
+  font-size: 2.5em;
 }
 
-@media only screen and (max-width: 1000px) {
-  .header {
-    height: 40vh;
-  }
-  .profileImg {
-    width: 25vw;
-    height: 25vw;
-    min-height: 150px;
-    min-width: 150px;
-    bottom: -20px;
-  }
-  .lineSeparator {
-    width: 40%;
-  }
-}
-
-/*!
- * animate.css -http://daneden.me/animate
- * Version - 3.7.0
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2018 Daniel Eden
- */
-
-@-webkit-keyframes bounce {
-  from,
-  20%,
-  53%,
-  80%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    -moz-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  40%,
-  43% {
-    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -moz-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -webkit-transform: translate3d(0, -30px, 0);
-    -moz-transform: translate3d(0, -30px, 0);
-    transform: translate3d(0, -30px, 0);
-  }
-
-  70% {
-    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -moz-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-    -webkit-transform: translate3d(0, -15px, 0);
-    -moz-transform: translate3d(0, -15px, 0);
-    transform: translate3d(0, -15px, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, -4px, 0);
-    -moz-transform: translate3d(0, -4px, 0);
-    transform: translate3d(0, -4px, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.buttonGroup {
+  width: 100%;
+  display: flex;
 }

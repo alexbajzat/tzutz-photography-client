@@ -1,46 +1,37 @@
 import React from "react";
-import Typing from "react-typing-animation";
+import backgroundImage from '../assets/home-cake.jpg';
 
 //components
-import { Showroom } from "../showroom";
-import { Contact } from "../contact";
 import { Header } from "../header";
 //styles
 import style from "./Home.module.css";
+import Button from "../button/Button";
 
 export default function Home() {
-  const typingMessagePart1 = "Your memories matter.";
-  const typingMessagePart2 = "I can help make them last. ";
-
+  const contentTitle = "Your memories matter. I can help make them last."
+  const content = "Quality photography services for your life events."
+  const mainContainerStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover"
+  }
   return (
-    <div>
-      <Header />
-      <div className={`${style.header} shadow`}>
-        <div className={style.bg}>
-          <div className={style.bgOverlay} />
-          <div className="container">
-            <div className={`${style.profileImg} shadow`}>
-              <div className={style.profileImgOverlay}>
-                <div className={style.fbIcon} />
-                <div className={style.instaIcon} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div
+      className={`${style.mainContainer} "container-fluid"`}
+      style={mainContainerStyle}
+    >
 
-      <div className={style.homeContent}>
-        <div className={`text-center px-4 ${style.messageContainer} shadow-lg`}>
-          <Typing speed={90}>
-            <p>{typingMessagePart1}</p>
-            <Typing.Delay ms={300} />
-            <p>{typingMessagePart2}</p>
-          </Typing>
+      <div className={`${style.contentGroup}`}>
+        <div className={`${style.content}`}>
+          <div className={`${style.contentTitle}`}>
+            <p>{contentTitle}</p>
+          </div>
+          <p>{content}</p>
         </div>
-        <Showroom />
-      </div>
-      <div className={style.contactContent}>
-        <Contact />
+        <div className={`${style.buttonGroup}`}>
+          <Button color="white" text="Gallery" />
+          <Button color="white" text="Contact" />
+        </div>
       </div>
     </div>
   );
