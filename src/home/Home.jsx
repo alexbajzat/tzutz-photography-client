@@ -10,16 +10,18 @@ import Button from "../button/Button";
 export default function Home() {
   const contentTitle = "Your memories matter. I can help make them last."
   const content = "Quality photography services for your life events."
-  const mainContainerStyle = {
+  const backgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"
   }
   return (
     <div
-      className={`${style.mainContainer} "container-fluid"`}
-      style={mainContainerStyle}
+      className={`${style.mainContainer}`}
     >
+      <div className={`${style.backgroundImage}`}
+        style={backgroundStyle}>
+      </div>
 
       <div className={`${style.contentGroup}`}>
         <div className={`${style.content}`}>

@@ -10,6 +10,10 @@
 
 }
 
+.buttonContainer:hover {
+  cursor: pointer;
+}
+
 .buttonText {
   font-family: var(--main-font);
   font-size: 1.5em;

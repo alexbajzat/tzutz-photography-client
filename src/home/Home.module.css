@@ -5,9 +5,17 @@
   align-items: flex-start;
 }
 
+.backgroundImage {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  z-index: -100;
+}
+
 .contentGroup {
   height: 100%;
-  width: 40%;
+  width: 35%;
   min-width: 200px;
 
   display: flex;
@@ -25,7 +33,7 @@
   flex-direction: column;
   justify-content: flex-start;
   color: white;
-  
+
   font-family: var(--main-font);
 }
 
@@ -36,4 +44,25 @@
 .buttonGroup {
   width: 100%;
   display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .backgroundImage {
+    height: 100%;
+    position: relative;
+  }
+
+  .contentGroup {
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+
+    justify-content: center;
+      
+    background-color: #923838;
+  }
+
+  .contentTitle {
+    font-size: 1.8em;
+  }
 }
