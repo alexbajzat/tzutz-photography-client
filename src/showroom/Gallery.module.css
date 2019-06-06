@@ -1,0 +1,25 @@
+.mainContainer {
+  height: auto;
+  width: 100%;
+  margin: 0;
+}
+
+.imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding-left: 15px; */
+  /* padding-right: 15px; */
+}
+
+.image {
+  height:  250px;
+  flex: 1 0 auto;
+  border: 1px white solid;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .image {
+        height: 180px;
+    }
+}

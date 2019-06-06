@@ -4,17 +4,14 @@ import "./App.css";
 
 // pages
 import { Home } from "./home";
-import { Admin, AdminLogin } from "./admin";
+import { Showroom } from './showroom';
 
 class App extends Component {
   render() {
     return (
       <div className="site-background">
-        <Router>
-          <Route exact path="/" component={Home} />
-          <Route path="/admin" component={Admin} />
-          <Route path="/admin-login" component={AdminLogin} />
-        </Router>
+        <Home/>
+        <Showroom/>
       </div>
     );
   }
