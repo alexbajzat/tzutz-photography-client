@@ -18,3 +18,15 @@
   font-family: var(--main-font);
   font-size: 1.5em;
 }
+
+@media only screen and (max-width: 600px) {
+  .buttonContainer {
+    min-height: 60px;
+    min-width: 100px;
+    margin: 3px;
+  }
+
+  .buttonText {
+    font-size: 1.2em;
+  }
+}

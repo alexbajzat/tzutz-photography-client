@@ -1,5 +1,5 @@
 .mainContainer {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -48,14 +48,14 @@
 
 @media only screen and (max-width: 600px) {
   .backgroundImage {
-    height: 100%;
+    height: 70%;
     position: relative;
   }
 
   .contentGroup {
     width: 100%;
     margin: 0;
-    padding: 5px;
+    padding: 10px;
 
     justify-content: center;
       
@@ -63,6 +63,6 @@
   }
 
   .contentTitle {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
 }
