@@ -1,14 +1,24 @@
 .mainContainer {
-  height: auto;
   width: 100%;
+  height: 100%;
   margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.imagesContainer {
+.imagesOuterContainer {
+  display: block;
+}
+
+.imagesInnerContainer {
   display: flex;
   flex-wrap: wrap;
-  /* padding-left: 15px; */
-  /* padding-right: 15px; */
+  overflow: hidden;
+
 }
 
 .image {

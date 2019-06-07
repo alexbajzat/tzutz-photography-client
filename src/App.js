@@ -9,7 +9,7 @@ import { Showroom } from './showroom';
 class App extends Component {
   render() {
     return (
-      <div className="site-background">
+      <div>
         <Home/>
         <Showroom/>
       </div>

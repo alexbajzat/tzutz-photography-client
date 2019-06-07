@@ -9,27 +9,31 @@
   position: relative;
 }
 
-
 .background {
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: -1;
-}
 
+  /* visibility: hidden; */
+  /* display: none; */
+}
 
 .galleryContainer {
   display: flex;
   align-items: center;
-  /* padding: 10px; */
-  padding-top: 20px;
   flex: 1;
 }
 
+
 @media only screen and (max-width: 600px) {
+  .mainContainer {
+    height: auto;
+  }
   .presenterContainer {
-    
     display: none;
     visibility: hidden;
   }
+
+
 }

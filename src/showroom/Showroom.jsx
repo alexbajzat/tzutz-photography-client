@@ -56,10 +56,11 @@ export default function Showroom() {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={`${styles.presenterContainer}`}>
-        <div className={styles.background} style={backgroundStyle} />
+      <div className={`${styles.presenterContainer}`}  >
+        <div className={styles.background} style={backgroundStyle}/>
       </div>
       <div className={`${styles.galleryContainer}`}>
+        {/* <div className={styles.background} style={backgroundStyle} /> */}
         <Gallery images={images} />
       </div>
     </div>

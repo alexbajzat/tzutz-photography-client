@@ -1,5 +1,5 @@
 .mainContainer {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -7,7 +7,7 @@
 
 .backgroundImage {
   position: absolute;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 
   z-index: -100;
@@ -47,6 +47,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .mainContainer {
+    height: 90vh;
+  }
+
   .backgroundImage {
     height: 70%;
     position: relative;
@@ -58,7 +62,7 @@
     padding: 10px;
 
     justify-content: center;
-      
+
     background-color: #923838;
   }
 

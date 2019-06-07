@@ -5,44 +5,66 @@ export default function Gallery(props) {
     const images = props.images;
     const self = useRef();
     const [galleryPreview, setGalleryPreview] = useState();
-    const screenWidthTreshold = 500;
+    const screenWidthTreshold = 600;
+    const MOBILE_IMAGE_MAX_WIDTH = 200;
+    const DESKTOP_IMAGE_MAX_WIDTH = 300;
 
     useEffect(() => {
-        console.log("in effect");
-        setGalleryPreview(images.map((image, idx) => {
-            console.log(self);
-            const parentWidth = self.current.clientWidth
+        var pair = [];
+        var imageContainer= [];
+        console.log(self.current);
+        console.log(self.current.getBoundingClientRect().width);
+        const parentWidth = self.current.offsetWidth;
+
+        for (var idx in images) {
+            const image = images[idx];
+
             var maxElementWidth;
             var minElementWidth;
-            console.log(`random number: ${Math.random(1000)}`)
-            if (parentWidth < 500) {
+            if (parentWidth < screenWidthTreshold) {
                 // < 500px screen aka mobile 
-                maxElementWidth = parentWidth / 1.7;
-                minElementWidth = parentWidth / 4;
+                maxElementWidth = MOBILE_IMAGE_MAX_WIDTH / 1.7;
+                minElementWidth = MOBILE_IMAGE_MAX_WIDTH / 4;
             } else {
                 // > 500px screen aka table/desktop
-                maxElementWidth = parentWidth / 1.7;
-                minElementWidth = parentWidth / 4;
+                maxElementWidth = DESKTOP_IMAGE_MAX_WIDTH / 3;
+                minElementWidth = DESKTOP_IMAGE_MAX_WIDTH / 4;
             }
             const width = Math.round(Math.random(maxElementWidth) * 100) + minElementWidth;
-            console.log(width);
-
+            // console.log(`parent width: ${parentWidth}, min width: ${minElementWidth}, max width: ${maxElementWidth}, actual: ${width}`);
             const randomWithStyle = {
                 width: `${width}px`,
                 backgroundImage: `url(${image.url})`,
                 backgroundSize: "cover",
                 backroundRepeat: "no-repeat"
             }
-            return <div
+            const element = <div
+                key={idx}
                 className={`${styles.image}`}
                 style={randomWithStyle}
-            />
-        }))
+            />;
+            if ((idx % 2 == 0 && idx != 0) || idx == images.length -1) {
+                if(idx == images.length -1) {
+                    pair.push(element);
+                }
+                console.log(`pair to wrap: ${pair}`)
+                imageContainer.push(wrapInRow(pair));
+                pair = [];
+            } else {
+                pair.push(element);
+            }
+        }
+        console.log(imageContainer);
+        setGalleryPreview(imageContainer);
     }, [])
+
+    function wrapInRow(element) {
+        return <div className={`${styles.imagesInnerContainer} row`}>{element}</div>
+    }
 
     return (
         <div ref={self} className={`${styles.mainContainer}`}>
-            <div className={`${styles.imagesContainer}`}>
+            <div className={`${styles.imagesOuterContainer}`}>
                 {galleryPreview}
             </div>
         </div>
