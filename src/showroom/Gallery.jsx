@@ -3,25 +3,32 @@ import styles from './Gallery.module.css';
 
 export default function Gallery(props) {
     const images = props.images;
+    const onImageSelectedCallback = props.onImageSelected;
+
     const self = useRef();
     const [galleryPreview, setGalleryPreview] = useState();
-    const screenWidthTreshold = 600;
+    const SCREEN_WIDTH_TRESHOLD = 600;
     const MOBILE_IMAGE_MAX_WIDTH = 200;
     const DESKTOP_IMAGE_MAX_WIDTH = 300;
 
+    var selectedIdx;
+
     useEffect(() => {
+        doImagePlacement();
+    }, [])
+
+
+    function doImagePlacement() {
         var pair = [];
-        var imageContainer= [];
-        console.log(self.current);
-        console.log(self.current.getBoundingClientRect().width);
+        var imageContainer = [];
         const parentWidth = self.current.offsetWidth;
 
         for (var idx in images) {
             const image = images[idx];
-
+            idx = parseInt(idx);
             var maxElementWidth;
             var minElementWidth;
-            if (parentWidth < screenWidthTreshold) {
+            if (parentWidth < SCREEN_WIDTH_TRESHOLD) {
                 // < 500px screen aka mobile 
                 maxElementWidth = MOBILE_IMAGE_MAX_WIDTH / 1.7;
                 minElementWidth = MOBILE_IMAGE_MAX_WIDTH / 4;
@@ -43,24 +50,24 @@ export default function Gallery(props) {
                 className={`${styles.image}`}
                 style={randomWithStyle}
             />;
-            if ((idx % 2 == 0 && idx != 0) || idx == images.length -1) {
-                if(idx == images.length -1) {
+            const isLastElement = idx === images.length - 1;
+            if ((idx % 2 === 0 && idx !== 0) || isLastElement) {
+                if (isLastElement) {
                     pair.push(element);
                 }
-                console.log(`pair to wrap: ${pair}`)
-                imageContainer.push(wrapInRow(pair));
+                imageContainer.push(wrapInRow(pair, idx));
                 pair = [];
             } else {
                 pair.push(element);
             }
         }
-        console.log(imageContainer);
         setGalleryPreview(imageContainer);
-    }, [])
-
-    function wrapInRow(element) {
-        return <div className={`${styles.imagesInnerContainer} row`}>{element}</div>
     }
+
+    function wrapInRow(element, idx) {
+        return <div className={`${styles.imagesInnerContainer} row`} key={idx}>{element}</div>
+    }
+
 
     return (
         <div ref={self} className={`${styles.mainContainer}`}>

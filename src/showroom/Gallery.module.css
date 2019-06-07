@@ -18,18 +18,20 @@
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-
 }
 
 .image {
-  height:  250px;
+  height: 250px;
   flex: 1 0 auto;
   border: 1px white solid;
+}
 
+.imageSelected {
+    border: 3px white solid; 
 }
 
 @media only screen and (max-width: 600px) {
-    .image {
-        height: 180px;
-    }
+  .image {
+    height: 180px;
+  }
 }

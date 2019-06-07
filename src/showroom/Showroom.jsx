@@ -54,14 +54,18 @@ export default function Showroom() {
     backgroundSize: "cover"
   }
 
+  function onImageSelected(image) {
+    console.log(image.url);
+  }
+
   return (
     <div className={styles.mainContainer}>
       <div className={`${styles.presenterContainer}`}  >
-        <div className={styles.background} style={backgroundStyle}/>
+        <div className={styles.background} style={backgroundStyle} />
       </div>
       <div className={`${styles.galleryContainer}`}>
         {/* <div className={styles.background} style={backgroundStyle} /> */}
-        <Gallery images={images} />
+        <Gallery images={images} onImageSelected={onImageSelected} />
       </div>
     </div>
   );
