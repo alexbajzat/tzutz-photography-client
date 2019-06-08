@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './Gallery.module.css';
 
+
 export default function Gallery(props) {
     const images = props.images;
     const onImageSelectedCallback = props.onImageSelected;
@@ -8,9 +9,9 @@ export default function Gallery(props) {
     const self = useRef();
     const [galleryPreview, setGalleryPreview] = useState();
     const SCREEN_WIDTH_TRESHOLD = 600;
+    const LARGE_SCREEN_WIDTH_TRESHOLD = 800;
     const MOBILE_IMAGE_MAX_WIDTH = 200;
     const DESKTOP_IMAGE_MAX_WIDTH = 300;
-
     var selectedIdx;
 
     useEffect(() => {
@@ -22,7 +23,7 @@ export default function Gallery(props) {
         var pair = [];
         var imageContainer = [];
         const parentWidth = self.current.offsetWidth;
-
+        var countPerRow = parentWidth > LARGE_SCREEN_WIDTH_TRESHOLD ? 3 : 2;
         for (var idx in images) {
             const image = images[idx];
             idx = parseInt(idx);
@@ -44,16 +45,16 @@ export default function Gallery(props) {
             pair.push(element);
 
             const isLastElement = idx === images.length - 1;
-            if ((idx % 3 === 0) || isLastElement) {
+            if ((idx % countPerRow === 0) || isLastElement) {
                 imageContainer.push(wrapInRow(pair, idx));
                 pair = [];
-            } 
+            }
         }
         setGalleryPreview(imageContainer);
     }
 
     function wrapInRow(element, idx) {
-        return <div className={`${styles.imagesInnerContainer} row`} key={idx}>{element}</div>
+        return <div className={`${styles.imagesInnerContainer}`} key={idx}>{element}</div>
     }
 
     function createElement(idx, image, width) {
@@ -67,9 +68,12 @@ export default function Gallery(props) {
             key={idx}
             className={`${styles.image}`}
             style={randomWithStyle}
-        />;
+            onClick={() => {onImageSelectedCallback(image)}}
+            >
+            <div className={`${styles.previewClickArea}`}>
+            </div>
+        </div>;
     }
-
 
     return (
         <div ref={self} className={`${styles.mainContainer}`}>

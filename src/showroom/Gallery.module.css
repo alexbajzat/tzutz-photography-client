@@ -5,33 +5,56 @@
 
   padding: 5px;
 
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imagesOuterContainer {
-  display: block;
-  position: relative;
+  width: 100%;
 }
 
 .imagesInnerContainer {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
+  margin: 0 ;
 
-  margin: 0!important;
+  overflow: hidden;
+
 }
 
 .image {
-  height: 200px;
+  height: 230px;
   flex: 1 0 auto;
   border: 1px white solid;
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+}
+
+.previewClickArea {
+  transition-property: background-color;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
+  z-index: 100;
+
+  height: 100%;
+  width: 100%;
+
+  visibility: hidden;
+}
+
+.image:hover {
+  transform: scale(1.2);
+}
+
+.image:hover > div {
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .imageSelected {
-    border: 3px white solid; 
+  border: 3px white solid;
 }
 
 @media only screen and (max-width: 600px) {

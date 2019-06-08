@@ -5,15 +5,33 @@
 }
 
 .presenterContainer {
-  flex: 2 0 auto;
+  flex: 3;
   position: relative;
+  min-width: 50vh; /** TODO check if really needed **/
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.background {
-  position: absolute;
+.blurBackground {
   height: 100%;
   width: 100%;
   z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagePreview {
+  position: absolute;
+  height: 85%;
+  width: 85%;
+
+  -webkit-box-shadow: 10px 17px 30px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 17px 30px -2px rgba(0,0,0,0.75);
+  box-shadow: 10px 17px 30px -2px rgba(0,0,0,0.75);
 }
 
 .galleryContainer {
@@ -21,7 +39,6 @@
   align-items: center;
   flex: 1 0 auto;
 }
-
 
 @media only screen and (max-width: 600px) {
   .mainContainer {
@@ -31,6 +48,4 @@
     display: none;
     visibility: hidden;
   }
-
-
 }
