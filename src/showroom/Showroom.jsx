@@ -7,7 +7,7 @@ import styles from "./Showroom.module.css";
 import backgroundImage from '../assets/blur-background.jpg';
 
 export default function Showroom() {
-  const [images, setImages] = useState([
+  const [images] = useState([
     {
       name: "category 1",
       url: "https://www.gstatic.com/webp/gallery/1.jpg"

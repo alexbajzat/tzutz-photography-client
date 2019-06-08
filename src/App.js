@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 // pages
@@ -9,7 +8,7 @@ import { Showroom } from './showroom';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div class="no-scrollable-main">
         <Home/>
         <Showroom/>
       </div>

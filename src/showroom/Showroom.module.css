@@ -1,6 +1,6 @@
 .mainContainer {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
 }
 
@@ -14,15 +14,12 @@
   height: 100%;
   width: 100%;
   z-index: -1;
-
-  /* visibility: hidden; */
-  /* display: none; */
 }
 
 .galleryContainer {
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 1 0 auto;
 }
 
 

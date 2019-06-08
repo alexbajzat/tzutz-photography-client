@@ -39,33 +39,35 @@ export default function Gallery(props) {
             }
             const width = Math.round(Math.random(maxElementWidth) * 100) + minElementWidth;
             // console.log(`parent width: ${parentWidth}, min width: ${minElementWidth}, max width: ${maxElementWidth}, actual: ${width}`);
-            const randomWithStyle = {
-                width: `${width}px`,
-                backgroundImage: `url(${image.url})`,
-                backgroundSize: "cover",
-                backroundRepeat: "no-repeat"
-            }
-            const element = <div
-                key={idx}
-                className={`${styles.image}`}
-                style={randomWithStyle}
-            />;
+
+            const element = createElement(idx, image, width);
+            pair.push(element);
+
             const isLastElement = idx === images.length - 1;
-            if ((idx % 2 === 0 && idx !== 0) || isLastElement) {
-                if (isLastElement) {
-                    pair.push(element);
-                }
+            if ((idx % 3 === 0) || isLastElement) {
                 imageContainer.push(wrapInRow(pair, idx));
                 pair = [];
-            } else {
-                pair.push(element);
-            }
+            } 
         }
         setGalleryPreview(imageContainer);
     }
 
     function wrapInRow(element, idx) {
         return <div className={`${styles.imagesInnerContainer} row`} key={idx}>{element}</div>
+    }
+
+    function createElement(idx, image, width) {
+        const randomWithStyle = {
+            width: `${width}px`,
+            backgroundImage: `url(${image.url})`,
+            backgroundSize: "cover",
+            backroundRepeat: "no-repeat"
+        }
+        return <div
+            key={idx}
+            className={`${styles.image}`}
+            style={randomWithStyle}
+        />;
     }
 
 

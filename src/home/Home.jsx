@@ -2,7 +2,7 @@ import React from "react";
 import backgroundImage from '../assets/home-cake.jpg';
 
 //components
-import { Header } from "../header";
+
 //styles
 import style from "./Home.module.css";
 import Button from "../button/Button";
