@@ -76,7 +76,8 @@ export default function Gallery(props) {
             width: `${width}px`,
             backgroundImage: `url(${image.url})`,
             backgroundSize: "cover",
-            backroundRepeat: "no-repeat"
+            backroundRepeat: "no-repeat",
+            backgroundPosition: "center"
         }
         return <div
             key={idx}
@@ -102,11 +103,12 @@ export default function Gallery(props) {
     }
 
     function doRandomAutoplay() {
-        if (availableIdxs.length == 0) {
+        if (availableIdxs.length === 0) {
             availableIdxs = range(0, images.length, 1);
         }
 
-        const idx = Math.floor(Math.random() * availableIdxs.length -1);
+        var idx = Math.floor(Math.random() * availableIdxs.length);
+        idx = idx == availableIdxs ? idx - 1 : idx
         markImageAsVisited(idx);
         doImageSelection(idx);
     }

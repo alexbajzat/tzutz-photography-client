@@ -56,7 +56,8 @@ export default function Showroom() {
   const backgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "fit"
+    backgroundSize: "cover",
+    backgroundPosition: "center"
   }
 
   function onImageSelected(image) {
