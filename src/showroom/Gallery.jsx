@@ -106,7 +106,7 @@ export default function Gallery(props) {
             availableIdxs = range(0, images.length, 1);
         }
 
-        const idx = Math.floor(Math.random() * availableIdxs.length);
+        const idx = Math.floor(Math.random() * availableIdxs.length -1);
         markImageAsVisited(idx);
         doImageSelection(idx);
     }
