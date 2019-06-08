@@ -46,6 +46,7 @@
 
 .image:hover {
   transform: scale(1.2);
+  z-index: 101;
 }
 
 .image:hover > div {
