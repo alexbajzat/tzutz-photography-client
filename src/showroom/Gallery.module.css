@@ -54,7 +54,8 @@
 }
 
 .imageSelected {
-  border: 3px white solid;
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @media only screen and (max-width: 600px) {
