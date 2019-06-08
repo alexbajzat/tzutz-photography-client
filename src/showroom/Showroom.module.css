@@ -7,11 +7,17 @@
 .presenterContainer {
   flex: 3;
   position: relative;
-  min-width: 50vh; /** TODO check if really needed **/
+  min-width: 800px; /** TODO check if really needed **/
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.galleryContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 .blurBackground {
@@ -34,11 +40,7 @@
   box-shadow: 10px 17px 30px -2px rgba(0,0,0,0.75);
 }
 
-.galleryContainer {
-  display: flex;
-  align-items: center;
-  flex: 1 0 auto;
-}
+
 
 @media only screen and (max-width: 600px) {
   .mainContainer {
