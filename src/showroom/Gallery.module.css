@@ -17,19 +17,22 @@
 .imagesInnerContainer {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 ;
-
-  overflow: hidden;
-
+  margin: 0;
 }
 
 .image {
   height: 230px;
+  width: 100%!important;
+
+  transition: all 0.5s ease;
+}
+
+.imageWrapper {
   flex: 1 0 auto;
   border: 1px white solid;
   cursor: pointer;
 
-  transition: all 0.5s ease;
+  overflow: hidden;
 }
 
 .previewClickArea {

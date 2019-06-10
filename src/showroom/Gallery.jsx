@@ -16,16 +16,16 @@ export default function Gallery(props) {
     const DESKTOP_IMAGE_MAX_WIDTH = 300;
     const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step));
 
-    // TODO
     var oldSelectedIdx;
     var selectedIdx;
     var refsCollection = {};
+    //TODO kill the autoplay (switch)
     var autoPlayIntervalID;
     var availableIdxs = [];
 
     useEffect(() => {
         doImagePlacement();
-        availableIdxs = range(0, images.length, 1);
+        resetAvailableIdxs();
 
         setTimeout(() => {
             autoPlayIntervalID = setInterval(doRandomAutoplay, 3000);
@@ -79,19 +79,23 @@ export default function Gallery(props) {
             backroundRepeat: "no-repeat",
             backgroundPosition: "center"
         }
-        return <div
-            key={idx}
-            className={`${styles.image}`}
-            style={randomWithStyle}
-            ref={(inst) => refsCollection[idx] = {
-                instance: inst,
-                image: image
-            }}
-            onClick={() => {
-                doImageSelection(idx);
-            }}
-        >
-            <div className={`${styles.previewClickArea}`}>
+        return <div className={styles.imageWrapper}>
+            <div
+                key={idx}
+                className={`${styles.image}`}
+                style={randomWithStyle}
+                ref={(inst) => refsCollection[idx] = {
+                    instance: inst,
+                    image: image
+                }}
+                onClick={() => {
+                    // stop the autoplay pls
+                    clearInterval(autoPlayIntervalID);
+                    doImageSelection(idx);
+                }}
+            >
+                <div className={`${styles.previewClickArea}`}>
+                </div>
             </div>
         </div>;
     }
@@ -104,12 +108,12 @@ export default function Gallery(props) {
 
     function doRandomAutoplay() {
         if (availableIdxs.length === 0) {
-            availableIdxs = range(0, images.length, 1);
+            resetAvailableIdxs();
         }
 
-        var idx = Math.floor(Math.random() * availableIdxs.length);
-        idx = idx == availableIdxs ? idx - 1 : idx
-        markImageAsVisited(idx);
+        var idx = Math.floor(Math.random() * availableIdxs.length - 1);
+        idx = idx < 0 ? 0 : idx
+        markImageAsVisited(availableIdxs[idx]);
         doImageSelection(idx);
     }
 
@@ -125,6 +129,10 @@ export default function Gallery(props) {
             refsCollection[oldSelectedIdx].instance.className = notSelectedClass;
         }
         refsCollection[selectedIdx].instance.className += ` ${styles.imageSelected}`;
+    }
+
+    function resetAvailableIdxs() {
+        availableIdxs = range(0, images.length - 1, 1);
     }
 
     return (

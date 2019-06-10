@@ -7,9 +7,6 @@ import styles from "./Showroom.module.css";
 //components
 import Gallery from './Gallery.jsx'
 
-// assets
-import backgroundImage from '../assets/blur-background.jpg';
-
 export default function Showroom() {
   const [images] = useState([
     {
@@ -53,15 +50,7 @@ export default function Showroom() {
 
   const [presentedImage, setPresentedImage] = useState(null);
 
-  const backgroundStyle = {
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center"
-  }
-
   function onImageSelected(image) {
-    console.log(image.url);
     const imageStyle = {
       backgroundImage: `url(${image.url})`,
       backgroundRepeat: "no-repeat",
