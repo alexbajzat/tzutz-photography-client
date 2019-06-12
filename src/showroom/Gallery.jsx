@@ -101,9 +101,11 @@ export default function Gallery(props) {
     }
 
     function doImageSelection(idx) {
-        onImageSelectedCallback(refsCollection[idx].image);
-        markSelected(idx);
-        markImageAsVisited(idx);
+        if (refsCollection[idx]) {
+            onImageSelectedCallback(refsCollection[idx].image);
+            markSelected(idx);
+            markImageAsVisited(idx);
+        }
     }
 
     function doRandomAutoplay() {

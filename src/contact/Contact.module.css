@@ -8,6 +8,10 @@
 .mobileBackground {
   display: none;
   visibility: hidden;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .imageContainer {
@@ -29,6 +33,7 @@
   width: 100%;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -37,5 +42,35 @@
 }
 
 .title {
-  font-size: 2em!important;
+  font-size: 2em !important;
+}
+
+.separator {
+  height: 1px;
+  width: 50%;
+  background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobileBackground {
+    display: inline;
+    visibility: visible;
+  }
+
+  .imageContainer {
+    display: none;
+    visibility: hidden;
+  }
+
+  .contactContainer {
+    z-index: 100;
+  }
+
+  .mobileBackground {
+    z-index: 101;
+  }
+
+  .detailsContainer {
+    z-index: 102;
+  }
 }

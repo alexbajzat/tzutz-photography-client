@@ -31,8 +31,9 @@ export default function Contact() {
 
       <div className={styles.contactContainer}>
         <div className={`${styles.detailsContainer} ${styles.title}`}>
-          <p>{titleLabel}</p> 
-          <p>{title}</p>
+          <div><p>{titleLabel}</p></div>
+          <div><p>{title}</p></div>
+          <div className={styles.separator}/>
         </div>
         <div className={styles.detailsContainer}>
           <p>{phoneLabel}</p>
