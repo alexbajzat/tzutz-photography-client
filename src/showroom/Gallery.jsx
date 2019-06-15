@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './Gallery.module.css';
 
+//assets
+import arrow from '../assets/arrow.png';
+
 
 export default function Gallery(props) {
     const images = props.images;
@@ -23,6 +26,12 @@ export default function Gallery(props) {
     var autoPlayIntervalID;
     var availableIdxs = [];
 
+
+    //pagination
+    const pageSize = 5;
+    var page = 0;
+    var elementsCount = props.images.length;
+
     useEffect(() => {
         doImagePlacement();
         resetAvailableIdxs();
@@ -38,7 +47,8 @@ export default function Gallery(props) {
         var imageContainer = [];
         const parentWidth = self.current.offsetWidth;
         var countPerRow = parentWidth > LARGE_SCREEN_WIDTH_TRESHOLD ? 3 : 2;
-        for (var idx in images) {
+        const currentElement = page * pageSize;
+        for (var idx = currentElement; idx < currentElement + pageSize && currentElement + pageSize < images.length; idx++) {
             const image = images[idx];
             idx = parseInt(idx);
             var maxElementWidth;
@@ -72,7 +82,7 @@ export default function Gallery(props) {
     }
 
     function createElement(idx, image, width) {
-        const randomWithStyle = {
+        const imageStyle = {
             width: `${width}px`,
             backgroundImage: `url(${image.url})`,
             backgroundSize: "cover",
@@ -83,7 +93,7 @@ export default function Gallery(props) {
             <div
                 key={idx}
                 className={`${styles.image}`}
-                style={randomWithStyle}
+                style={imageStyle}
                 ref={(inst) => refsCollection[idx] = {
                     instance: inst,
                     image: image
@@ -137,10 +147,40 @@ export default function Gallery(props) {
         availableIdxs = range(0, images.length - 1, 1);
     }
 
+    function doPagination(action) {
+        page = page + action;
+        doImagePlacement();
+    }
+
+
+    function getPaginationButton(type) {
+        return {
+            backgroundImage: `url(${arrow})`,
+            backgroundSize: "cover",
+            backroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            transform: type === -1 ? 'rotate(-90deg)' : 'rotate(90deg)'
+        }
+    }
+
     return (
         <div ref={self} className={`${styles.mainContainer}`}>
             <div className={`${styles.imagesOuterContainer}`}>
                 {galleryPreview}
+            </div>
+            <div className={styles.paginationControlsContainer}>
+                {page != 0 &&
+                    <div
+                        className={styles.paginationButton}
+                        style={getPaginationButton(-1)}
+                        // onClick={doPagination(-1)}
+                         />}
+                {page * pageSize < elementsCount &&
+                    <div
+                        className={styles.paginationButton}
+                        style={getPaginationButton(1)}
+                        // onClick={doPagination(1)}
+                         />}
             </div>
         </div>
     )
